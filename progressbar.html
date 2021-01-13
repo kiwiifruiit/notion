@@ -175,9 +175,6 @@
                 </div>
                 <div class="progressBar_progressBar__18WlE">
                     <div class="progressBar_battery__2TZRX progressBar_battery_dark__3N_jI">
-                        <div class="progressBar_percentage__32Zhp progressBar_percentage_dark__p8Zjq" id="lifeBar" style="width: 0%;"></div>
-                    </div>
-                    <p class="progressBar_progressText__1A3fz progressBar_progressText_dark__2rXAc" id="lifeText">Life: 0%</p>
                 </div>
             </div>
         </div>
@@ -198,14 +195,6 @@
             var endOfDay= new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),23,59,59).getTime()
             var endOfDayPerc = Math.round(( (today-startOfDay)/(endOfDay-startOfDay)) *100)
 
-            var birthday = new Date(1989,04,18)
-            var startOfLife = birthday.getTime()
-
-            var endOfLifeCalc = birthday; 
-            endOfLifeCalc.setFullYear(birthday.getFullYear() + 90);
-            var endOfLife = endOfLifeCalc.getTime(); 
-            var endOfLifePerc = Math.round(( (today-startOfLife)/(endOfLife-startOfLife)) *100)
-
 
             document.getElementById('dayBar').style.width = endOfDayPerc+"%";
             document.getElementById('dayText').innerHTML = "Day: "+  endOfDayPerc+"%";
@@ -215,9 +204,6 @@
 
             document.getElementById('yearBar').style.width = endOfYearPerc+"%";
             document.getElementById('yearText').innerHTML = "Year: "+  endOfYearPerc+"%";
-
-            document.getElementById('lifeBar').style.width = endOfLifePerc+"%";
-            document.getElementById('lifeText').innerHTML = "Life: "+  endOfLifePerc+"%";
 
 
             var t = setTimeout(startbars, 15000);
